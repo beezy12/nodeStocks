@@ -1,0 +1,32 @@
+{
+  "name": "node-stocks",
+  "version": "1.0.0",
+  "description": "an app I made using Node, Angular, Express, Mongo, Mongoose, Jade, and Heroku that allows a user to buy and sell stocks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --harmony_destructuring server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beezy12/nodeStocks.git"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ]
+  },
+  "author": "Brian Stumbaugh <brian.stumbaugh@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beezy12/nodeStocks/issues"
+  },
+  "homepage": "https://github.com/beezy12/nodeStocks#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
