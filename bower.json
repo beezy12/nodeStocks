@@ -1,0 +1,18 @@
+{
+  "name": "node-stocks",
+  "description": "an app I made using Node, Angular, Express, Mongo, Mongoose, Jade, and Heroku that allows a user to buy and sell stocks.",
+  "main": "index.js",
+  "authors": [
+    "Brian Stumbaugh <brian.stumbaugh@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/beezy12/nodeStocks",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
