@@ -17,10 +17,10 @@ const PORT = process.env.PORT || 3000;
 // this will parse the form data into an object
 // const bodyParser = require('body-parser');
 
-const path = require('path');
 
 app.set('view engine', 'jade');
 
+const path = require('path');
 // this is a middleware function for sass
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
