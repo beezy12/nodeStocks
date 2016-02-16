@@ -5,9 +5,7 @@ const router = express.Router();
 
 
 router.get('/quotes', (req, res) => {
-	res.render('quotes', {
-
-	});
+	res.render('quotes');
 });
 
 
