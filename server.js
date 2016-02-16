@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 // this will parse the form data into an object
 // const bodyParser = require('body-parser');
 
-
+// this says we are going to be using jade, so when we render views use jade
 app.set('view engine', 'jade');
 
 const path = require('path');
