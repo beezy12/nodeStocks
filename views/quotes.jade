@@ -10,9 +10,13 @@ block content
 							input(type='text', name="name", placeholder='name')
 							input(type="submit" value="stock value")
 
-			.row
+			.row.listQuote
 				.col-md-4
-					#{name}
+					p #{name}
+				.col-md-4
+					p #{symbol}
+				.col-md-4
+					p #{price}
 
 script(src='../vendor/jquery/dist/jquery.js')
 script(src='../vendor/bootstrap/dist/js/bootstrap.js')

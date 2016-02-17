@@ -12,14 +12,19 @@ router.get('/quotes', (req, res) => {
 });
 
 router.post('/quotes', (req, res) => {
-	console.log('------>', req.body.name);
+	// console.log('------>', req.body.name);
 	const stock = req.body.name;
+	console.log("************", stock);
 	const url = `http://dev.markitondemand.com/Api/v2/Quote/json?symbol=${stock}`;
 	request.get(url, (err, response, body) => {
 		if(err) throw err;
 
+		body = JSON.parse(body);
+
 		res.render('quotes', {
-			name: body.name
+			name: body.Name,
+			symbol: body.Symbol,
+			price: body.LastPrice
 		});
 
 		console.log('res body', body);
