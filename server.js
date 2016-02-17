@@ -3,10 +3,15 @@
 
 // get dependecies
 const express = require('express');
+var bodyParser = require('body-parser')
 
 // initialize app.  app equals express.
 const app = express();
 
+app.use( bodyParser.json() );
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 // ./routes/  this will automatically look for index if you don't specify a different route
 const routes = require('./routes/');
 
@@ -33,6 +38,9 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 // this one gives a path to anything in views that doesn't already have a path
 app.set('views', path.join(__dirname, 'views'));
+
+
+
 
 
 

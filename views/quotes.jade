@@ -1,12 +1,18 @@
 extends ./header.jade
 
 block content
-body
-	.container
-		form(method="post" contact="contact/accept")
-			.form-group
-				input(type="submit" value="stock value")
+	body
+		.container
+			.row
+				.col-md-5.col-md-offset-4
+					form(action="/quotes" method="post" )
+						.form-group.down
+							input(type='text', name="name", placeholder='name')
+							input(type="submit" value="stock value")
 
+			.row
+				.col-md-4
+					#{name}
 
 script(src='../vendor/jquery/dist/jquery.js')
 script(src='../vendor/bootstrap/dist/js/bootstrap.js')
