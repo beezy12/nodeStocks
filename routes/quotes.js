@@ -7,18 +7,19 @@ const request = require('request');
 
 router.get('/quotes', (req, res) => {
 	res.render('quotes');
-
-
 });
 
+
 router.post('/quotes', (req, res) => {
-	// console.log('------>', req.body.name);
+
 	const stock = req.body.name;
 	console.log("************", stock);
 	const url = `http://dev.markitondemand.com/Api/v2/Quote/json?symbol=${stock}`;
+
 	request.get(url, (err, response, body) => {
 		if(err) throw err;
 
+		// json object came back stringified, had to parse it into a json object
 		body = JSON.parse(body);
 
 		res.render('quotes', {

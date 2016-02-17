@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --harmony_destructuring server.js",
-    "bower": "bower"
+    "bower": "bower",
+    "postinstall": "npm run bower install"
   },
   "repository": {
     "type": "git",

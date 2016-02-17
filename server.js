@@ -8,24 +8,28 @@ var bodyParser = require('body-parser')
 // initialize app.  app equals express.
 const app = express();
 
-app.use( bodyParser.json() );
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+// this will parse the form data into an object
+// const bodyParser = require('body-parser');
+
+
 // ./routes/  this will automatically look for index if you don't specify a different route
 const routes = require('./routes/');
+const path = require('path');
 
 // set port to environment port or 3000
 // set port number to variable PORT because Heroku can't read a port number
 const PORT = process.env.PORT || 3000;
 
-// this will parse the form data into an object
-// const bodyParser = require('body-parser');
 
 // this says we are going to be using jade, so when we render views use jade
 app.set('view engine', 'jade');
 
-const path = require('path');
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use( bodyParser.json() );
+
 // this is a middleware function for sass
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
