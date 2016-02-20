@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use( bodyParser.json() );
+app.use(bodyParser.json());
 
 // this is a middleware function for sass
 app.use(require('node-sass-middleware')({
