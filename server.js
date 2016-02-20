@@ -1,25 +1,19 @@
 'use strict';
-/* eslint  */
 
 // get dependecies
+
 const express = require('express');
-var bodyParser = require('body-parser')
-
-// initialize app.  app equals express.
 const app = express();
-
 // this will parse the form data into an object
-// const bodyParser = require('body-parser');
-
-
+const bodyParser = require('body-parser');
 // ./routes/  this will automatically look for index if you don't specify a different route
 const routes = require('./routes/');
 const path = require('path');
-
-// set port to environment port or 3000
 // set port number to variable PORT because Heroku can't read a port number
 const PORT = process.env.PORT || 3000;
 
+
+// MIDDLEWARE
 
 // this says we are going to be using jade, so when we render views use jade
 app.set('view engine', 'jade');
@@ -43,19 +37,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // this one gives a path to anything in views that doesn't already have a path
 app.set('views', path.join(__dirname, 'views'));
 
-
-
-
-
-
-// load all routes
+// load all routes. this needs to be below the middleware, like bodyParser, because if it hits a route first then bodyParser won't fire.
 app.use(routes);
-
-
-
-
-
-
 
 
 
@@ -63,5 +46,21 @@ app.use(routes);
 app.listen(PORT, () => {
 	console.log('hear ya servin');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -4,19 +4,30 @@ block content
 	body
 		.container
 			.row
-				.col-md-5.col-md-offset-4
-					form(action="/quotes" method="post" )
+				.col-md-8.col-md-offset-4
+					form(action="/quotes" method="POST" )
 						.form-group.down
 							input(type='text', name="name", placeholder='name')
 							input(type="submit" value="stock value")
+							//- input(type='text', name='quantity', placeholder='# shares to buy')
+							//- input(type='submit', name='buy', value='buy stock')
 
 			.row.listQuote
 				.col-md-4
+					p Company Name:
 					p #{name}
 				.col-md-4
+					p Company Symbol:
 					p #{symbol}
 				.col-md-4
+					p Current price of stock:
 					p #{price}
+
+
+
+
+
+
 
 script(src='../vendor/jquery/dist/jquery.js')
 script(src='../vendor/bootstrap/dist/js/bootstrap.js')
