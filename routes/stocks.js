@@ -5,7 +5,8 @@ const router = express.Router();
 const quotes = require('../controllers/quotes');
 
 router.get('/', quotes.landing);
-router.get('/quotes', quotes.ask);
+router.get('/quotes', quotes.search);
+router.post('/quotes', quotes.getStocks);
 
 
 
