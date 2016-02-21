@@ -23,7 +23,7 @@ module.exports = {
 
 			// body came back as a string, so I turned it into a json object
 			body = JSON.parse(body);
-
+			console.log(body)
 			res.render('quotes', {
 				name: body.Name,
 				symbol: body.Symbol,

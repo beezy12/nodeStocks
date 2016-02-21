@@ -11,6 +11,7 @@ const stocks = require('./routes/stocks');
 const path = require('path');
 // set port number to variable PORT because Heroku can't read a port number
 const PORT = process.env.PORT || 3000;
+const mongoose = require('mongoose');
 
 
 // MIDDLEWARE
@@ -43,19 +44,29 @@ app.use(stocks);
 
 
 
-// this sets up the server
-app.listen(PORT, () => {
-	console.log('hear ya servin');
+// connect mongoose to the database
+mongoose.connect('mongodb://localhost:27017/stockPulse', (err) => {
+	if(err) throw err;
+
+	// this sets up the server
+	app.listen(PORT, () => {
+		console.log('hear ya servin');
+	});
 });
 
 
 
 
+
+
+
+
 /* to-do list:
-make modal pop up, askin for stock quantities
-setup and require mongoose
-setup server
+----make modal pop up, askin for stock quantities
+----setup and require mongoose
+----setup server
 setup db model
+push vars from stock company to db
 */
 
 

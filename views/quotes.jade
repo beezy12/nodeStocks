@@ -7,8 +7,8 @@ block content
 				.col-md-8.col-md-offset-4
 					form(action="/quotes" method="POST" )
 						.form-group.down
-							input(type='text', name="name", placeholder='name')
-							input(type="submit" value="stock value")
+							input(type='text', name="name", placeholder='symbol or company name here')
+							input(type="submit", value="stock value", class="getQuote")
 							//- input(type='text', name='quantity', placeholder='# shares to buy')
 							//- input(type='submit', name='buy', value='buy stock')
 
@@ -24,10 +24,21 @@ block content
 					p #{price}
 
 
+					//- a.btn.btn-default.btn-lg.buy(data-toggle="modal" data-target="#buyModal") buy shares?
+			.row
+				.col-md-8.col-md-offset-4
+					button.btn.btn-primary.buy(data-toggle="modal" data-target="#sharesModal") buy shares?
+
+		#sharesModal.modal.fade(role="dialog")
+			.modal-dialog
+				.modal-content
+					.modal-body
+						label(for="getShares") Enter number of shares to buy
+						input.form-control(name="getShares" required="true")
+					.modal-footer
+						button.btn.btn-primary(data-dismiss="modal") Buy
 
 
+	script(src='../vendor/jquery/dist/jquery.min.js')
+	script(src='../vendor/bootstrap/dist/js/bootstrap.js')
 
-
-
-script(src='../vendor/jquery/dist/jquery.js')
-script(src='../vendor/bootstrap/dist/js/bootstrap.js')
