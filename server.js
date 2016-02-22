@@ -7,7 +7,8 @@ const app = express();
 // this will parse the form data into an object
 const bodyParser = require('body-parser');
 // ./routes/  this will automatically look for index if you don't specify a different route
-const stocks = require('./routes/stocks');
+const getQuotes = require('./routes/getQuotesRtr');
+const getStocks = require('./routes/getStocksRtr');
 const path = require('path');
 // set port number to variable PORT because Heroku can't read a port number
 const PORT = process.env.PORT || 3000;
@@ -39,7 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 
 // load all routes. this needs to be below the middleware, like bodyParser, because if it hits a route first then bodyParser won't fire.
-app.use(stocks);
+app.use(getQuotes);
+app.use(getStocks);
 
 
 

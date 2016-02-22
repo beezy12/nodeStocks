@@ -1,6 +1,10 @@
 'use strict';
 
 const request = require('request');
+// const StoreStocks = require('../models/storeStocks.js')
+
+
+
 
 module.exports = {
 	// home here is home.jade
@@ -12,7 +16,7 @@ module.exports = {
 		res.render('quotes')
 	},
 
-	getStocks (req, res) {
+	getQuotes (req, res) {
 		// name here comes from the input field in the jade template. this stock variable gets added into the url below
 		const stock = req.body.name;
 		const url = `http://dev.markitondemand.com/Api/v2/Quote/json?symbol=${stock}`;
@@ -23,7 +27,7 @@ module.exports = {
 
 			// body came back as a string, so I turned it into a json object
 			body = JSON.parse(body);
-			console.log(body)
+			// console.log(body)
 			res.render('quotes', {
 				name: body.Name,
 				symbol: body.Symbol,
@@ -36,3 +40,13 @@ module.exports = {
 
 
 };
+
+
+
+
+
+
+
+
+
+
